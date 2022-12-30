@@ -1,4 +1,3 @@
-
 name: yamdb_workflow
 
 on: [push]
@@ -22,9 +21,10 @@ jobs:
         pip install -r ./api_yamdb/requirements.txt
     - name: Test with flake8 and django tests
       run: |
+        pytest
         cd api_yamdb/
         flake8
-        pytest
+        
 
   build_and_push_to_docker_hub:
       name: Push Docker image to Docker Hub
@@ -47,8 +47,9 @@ jobs:
           # Пуш образа в Docker Hub
           uses: docker/build-push-action@v2
           with:
+            context: ./api_yamdb/
             push: true
-            tags: ${{ secrets.DOCKER_USERNAME }}/yamdb:latest
+            tags: ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
 
   deploy:
     runs-on: ubuntu-latest
