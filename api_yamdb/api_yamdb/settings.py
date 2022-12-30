@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'web',
@@ -70,14 +70,14 @@ DATABASES = {
         'HOST': os.getenv('DB_HOST', 'db'),
         'PORT': os.getenv('DB_PORT', '5432')
     },
-    # 'sqlite3': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
+    'sqlite3': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
-# DATABASES['default'] = DATABASES[
-#     'sqlite3' if os.getenv('USE_SQLITE', 'False') == 'True' else 'postgres'
-# ]
+DATABASES['default'] = DATABASES[
+    'sqlite3' if os.getenv('USE_SQLITE', 'False') == 'True' else 'postgres'
+]
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -109,7 +109,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL = 'reviews.User'
 
