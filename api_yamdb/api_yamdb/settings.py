@@ -4,7 +4,11 @@ from datetime import timedelta
 from dotenv import load_dotenv
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ENV_DIR = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')), 'infra')
+ENV_DIR = os.path.join(
+    os.path.abspath(
+        os.path.join(os.path.dirname(__file__), '..', '..')
+    ), 'infra'
+)
 
 load_dotenv(dotenv_path=ENV_DIR)
 
