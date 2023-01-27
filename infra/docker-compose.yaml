@@ -9,6 +9,7 @@ services:
       - ./.env
   web:
     image: takoijekakvse/api_yamdb
+    # build: ../api_yamdb
     restart: always
     volumes:
       - static_value:/app/static/

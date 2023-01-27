@@ -4,14 +4,15 @@ from datetime import timedelta
 from dotenv import load_dotenv
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# ENV_DIR = os.path.join(
-#     os.path.abspath(
-#         os.path.join(os.path.dirname(__file__), '..', '..')
-#     ), 'infra'
-# )
 
-# load_dotenv(dotenv_path=ENV_DIR)
-load_dotenv()
+dotenv_path = os.path.join(
+    os.path.abspath(
+        os.path.join(os.path.dirname(__file__), '..', '..')
+    ), 'infra'
+)
+
+if os.path.exists(dotenv_path):
+    load_dotenv(dotenv_path)
 
 SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
 
@@ -67,6 +68,7 @@ TEMPLATES = [
         },
     },
 ]
+
 WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 # DATABASES = {
 #     'postgres': {
