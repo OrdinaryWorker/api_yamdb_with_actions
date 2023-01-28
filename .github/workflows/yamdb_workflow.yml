@@ -70,7 +70,7 @@ jobs:
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             sudo docker image rm ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
-            cd infra/
+            cd ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest/infra/
             sudo docker-compose up -d
             
   send_message:
