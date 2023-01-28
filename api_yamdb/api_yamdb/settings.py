@@ -26,6 +26,7 @@ ALLOWED_HOSTS = [
     'testserver',
     '84.201.162.245',
     '51.250.14.129'
+    '51.250.5.177'
 ]
 
 INSTALLED_APPS = [
