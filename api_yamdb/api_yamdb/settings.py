@@ -22,7 +22,6 @@ ALLOWED_HOSTS = [
     'web',
     'localhost',
     'oleg-practicum.sytes.net'
-    '51.250.5.177'
 ]
 
 INSTALLED_APPS = [
@@ -69,23 +68,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'api_yamdb.wsgi.application'
-# DATABASES = {
-#     'postgres': {
-#         'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.postgresql'),
-#         'NAME': os.getenv('DB_NAME', 'postgres'),
-#         'USER': os.getenv('POSTGRES_USER', 'postgres'),
-#         'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'postgres'),
-#         'HOST': os.getenv('DB_HOST', 'db'),
-#         'PORT': os.getenv('DB_PORT', '5432')
-#     },
-#     'sqlite3': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-# DATABASES['default'] = DATABASES[
-#     'sqlite3' if os.getenv('USE_SQLITE', 'False') == 'True' else 'postgres'
-# ]
 
 DATABASES = {
     'default': {
@@ -97,13 +79,6 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT', '5432')
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 
 
 AUTH_PASSWORD_VALIDATORS = [
