@@ -21,11 +21,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'web',
     'localhost',
-    '127.0.0.1',
-    '[::1]',
-    'testserver',
-    '84.201.162.245',
-    '51.250.14.129'
+    'oleg-practicum.sytes.net'
     '51.250.5.177'
 ]
 
