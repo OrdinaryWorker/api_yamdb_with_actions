@@ -1,4 +1,4 @@
-## Проект «api_YaMDb_final» [![YaMDb workflow]https://github.com/OrdinaryWorker/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg]
+## Проект «api_YaMDb»
 ***
 ### Описание:
 Проект YaMDb собирает отзывы пользователей на различные произведения.
